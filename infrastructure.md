@@ -1,132 +1,114 @@
 # GeoDat AI Infrastructure Architecture
 
-This document defines how infrastructure is managed within the GeoDat AI GitHub organisation.
+Infrastructure is defined using Infrastructure-as-Code.
 
-Infrastructure is managed using **Infrastructure as Code (IaC)** to ensure systems are reproducible, version controlled, and auditable.
+Typical tools:
+
+Terraform  
+Bicep
+
+Infrastructure should be reproducible, version controlled, and auditable.
 
 ---
 
 # Infrastructure Repositories
 
-Infrastructure is separated into two main repository types.
+Two main repositories manage infrastructure.
+
+---
 
 ## infra-core
 
-This repository defines the **cloud infrastructure itself**.
+Defines cloud infrastructure resources.
 
 Examples:
 
-- Azure resource groups
-- virtual machines
-- networking
-- PostgreSQL databases
-- storage accounts
-- identity and access configuration
+Azure Virtual Network  
+Azure Container Apps environment  
+Azure PostgreSQL servers  
+Azure Blob Storage  
+Azure Key Vault  
+Azure Container Registry
 
-Typical tools used:
+Tools typically used:
 
-- Terraform
-- Bicep
-- infrastructure documentation
-
-This repository answers the question:
-
-> What infrastructure exists?
+Terraform  
+Bicep
 
 ---
 
 ## infra-runtime
 
-This repository defines **how applications and services run on that infrastructure**.
+Defines how services run on the infrastructure.
 
 Examples:
 
-- Docker Compose
-- service deployment scripts
-- reverse proxy configuration
-- SSL configuration
-- runtime environment setup
-- monitoring configuration
-
-This repository answers the question:
-
-> How do services run on the infrastructure?
+container deployment configuration  
+container app definitions  
+reverse proxy configuration  
+service configuration  
+monitoring setup
 
 ---
 
-# Infrastructure Principles
+# Runtime Layer
 
-Infrastructure should be:
+The runtime layer runs containerised services.
 
-- reproducible
-- version controlled
-- documented
-- separated from application code
+Responsibilities include:
 
-Infrastructure definitions should **not be embedded inside application repositories** unless they are extremely small project-specific deployments.
+container hosting  
+environment configuration  
+service scaling  
+network routing  
+secret injection
 
----
+Primary runtime platform:
 
-# Terraform / Bicep Usage
-
-Infrastructure should be defined using Infrastructure-as-Code tools such as:
-
-- Terraform
-- Bicep
-
-Typical components managed via IaC include:
-
-- networks
-- virtual machines
-- container hosts
-- PostgreSQL servers
-- storage
-- security policies
-
-IaC ensures that environments can be rebuilt consistently.
+Azure Container Apps
 
 ---
 
-# State Management
+# Container Architecture
 
-When using Terraform:
+Applications and services are deployed as containers.
 
-- remote state storage should be used
-- state files must not be committed to Git
-- sensitive information must not be stored in repositories
+Typical container workloads:
 
----
+Go APIs  
+Python APIs  
+data processing services  
+frontend applications  
+analytics pipelines
 
-# Secrets Management
-
-Secrets must **never be committed to Git repositories**.
-
-Examples of secrets:
-
-- database passwords
-- API keys
-- private certificates
-- access tokens
-
-Instead use:
-
-- environment variables
-- secure secret storage
-- platform secret managers
+Containers allow reproducible and portable deployments.
 
 ---
 
-# Infrastructure Lifecycle
+# Azure Services
 
-Typical workflow:
+Core Azure infrastructure typically includes:
 
-1. Define infrastructure changes in `infra-core`
-2. Review and commit changes
-3. Apply changes via Terraform or Bicep
-4. Deploy services using `infra-runtime`
+Azure Container Apps  
+Azure Container Registry  
+Azure Database for PostgreSQL  
+Azure Blob Storage  
+Azure Virtual Networks  
+Azure Key Vault  
+Azure Monitor
+
+---
+
+# Terraform State
+
+Terraform state should:
+
+use remote storage  
+never be committed to Git  
+be securely protected
 
 ---
 
 # Guiding Principle
 
-Infrastructure should be predictable, secure, and fully reproducible from version-controlled code.
+Infrastructure should be reproducible and controlled through versioned code.
