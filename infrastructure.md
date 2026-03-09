@@ -1,4 +1,4 @@
-# GeoDat AI Infrastructure Architecture
+# Geodat AI Infrastructure Architecture
 
 Infrastructure is defined using Infrastructure-as-Code.
 
