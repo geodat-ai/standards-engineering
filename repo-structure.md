@@ -1,4 +1,4 @@
-# GeoDat AI Repository Structure
+# Geodat AI Repository Structure
 
 This document defines how repositories are organised within the GeoDat AI GitHub organisation.
 
@@ -10,7 +10,7 @@ The goal is to maintain a clear separation between infrastructure, services, app
 
 # Platform Architecture
 
-GeoDat AI follows a layered platform architecture.
+Geodat AI follows a layered platform architecture.
 
 Infrastructure Layer  
 Azure cloud resources defined using Infrastructure-as-Code.
