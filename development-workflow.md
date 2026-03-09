@@ -1,4 +1,4 @@
-# GeoDat AI Development Workflow
+# Geodat AI Development Workflow
 
 This document defines the development workflow used across GeoDat AI repositories.
 
