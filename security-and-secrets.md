@@ -1,122 +1,78 @@
 # GeoDat AI Security and Secrets Management
 
-This document defines how sensitive information is handled within the GeoDat AI GitHub organisation.
-
-The primary rule is:
-
-> Secrets must never be committed to Git repositories.
+Sensitive credentials must never be stored in source code repositories.
 
 ---
 
 # What Counts as a Secret
 
-Secrets include any information that could allow access to infrastructure, data, or services.
+Examples include:
 
-Examples:
-
-- database passwords
-- API keys
-- OAuth tokens
-- private certificates
-- SSH private keys
-- service account credentials
-- encryption keys
-
-These must never appear in:
-
-- Git commits
-- configuration files
-- documentation
-- screenshots
+database passwords  
+API tokens  
+private certificates  
+access keys  
+encryption keys
 
 ---
 
 # Secret Management Platform
 
-GeoDat AI uses **Azure Key Vault** for secure storage of secrets.
+GeoDat AI uses Azure Key Vault.
 
-Key Vault is used to store:
+Key Vault stores:
 
-- database credentials
-- API tokens
-- TLS certificates
-- application secrets
-- service account credentials
+database credentials  
+API tokens  
+storage keys  
+TLS certificates  
+application secrets
 
-Applications and services retrieve secrets securely at runtime.
+Applications retrieve secrets securely at runtime.
 
 ---
 
 # Infrastructure Integration
 
-Secrets should be referenced by infrastructure tools rather than stored in code.
+Infrastructure tools should reference secrets stored in Key Vault.
 
-Examples:
+Applications should access secrets using:
 
-- Terraform referencing Azure Key Vault secrets
-- applications retrieving secrets via environment variables
-- runtime services accessing secrets through managed identities
+environment variables  
+managed identities  
+secure configuration injection
 
 ---
 
 # Local Development
 
-For local development:
+Use `.env` files for local development.
 
-- use `.env` files for environment variables
-- `.env` files must be excluded using `.gitignore`
-- example files such as `.env.example` may be committed
+`.env` files must be excluded from Git.
 
-Example:
-
-DB_HOST=localhost
-DB_USER=dev_user
-DB_PASSWORD=your_password_here
-
-
----
-
-# GitHub Rules
-
-Repositories must not contain:
-
-- `.env` files with real credentials
-- configuration files containing passwords
-- exported secret files
-
-Instead include:
-
-- `.env.example`
-- documentation explaining required variables
+Repositories should include `.env.example` files.
 
 ---
 
 # Access Control
 
-Access to secrets should follow the principle of:
+Secrets should follow least privilege.
 
-**least privilege**
-
-Only systems or users that require access should receive it.
-
-Examples:
-
-- services accessing only the secrets they need
-- client environments separated from internal infrastructure
+Only systems requiring access should receive it.
 
 ---
 
 # Incident Response
 
-If a secret is accidentally committed:
+If a secret is exposed:
 
-1. immediately revoke the secret
-2. rotate credentials
-3. remove the secret from repository history
-4. investigate potential exposure
+1 revoke the credential  
+2 rotate the secret  
+3 remove the secret from Git history  
+4 investigate exposure
 
 ---
 
 # Guiding Principle
 
-Secrets should be stored securely, accessed only when required, and never embedded in source code.
+Secrets must always remain outside source code.
