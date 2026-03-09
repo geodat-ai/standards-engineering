@@ -1,4 +1,4 @@
-# Geodat AI Engineering Standards
+# Geodat AI Engineering Standards and Architecture
 
 This repository defines the engineering standards, architecture principles, and development practices used across Geodat AI systems.
 
