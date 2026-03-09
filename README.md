@@ -189,7 +189,7 @@ GeoDat AI systems follow several core principles:
 
 # Purpose
 
-This repository exists to ensure that GeoDat AI systems remain:
+This repository exists to ensure that Geodat AI systems remain:
 
 - consistent
 - maintainable
