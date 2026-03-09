@@ -1,4 +1,4 @@
-# GeoDat AI Platform Architecture
+# Geodat AI Platform Architecture
 
 This document describes the high-level architecture used across GeoDat AI systems.
 
@@ -8,7 +8,7 @@ The platform combines modern cloud infrastructure, containerised services, geosp
 
 # Architecture Overview
 
-GeoDat AI systems follow a layered architecture.
+Geodat AI systems follow a layered architecture.
 
 Infrastructure Layer  
 Cloud infrastructure and networking.
@@ -134,7 +134,7 @@ Credentials and API keys are stored in Azure Key Vault.
 
 # Spatial Services
 
-GeoDat AI platforms may include geospatial services such as:
+Geodat AI platforms may include geospatial services such as:
 
 - GeoServer for OGC-compliant map services
 - PostGIS for spatial analysis
@@ -179,7 +179,7 @@ Blob storage may store:
 
 # Data Science and Analytics
 
-GeoDat AI supports advanced analytics using:
+Geodat AI supports advanced analytics using:
 
 - R
 - Python
@@ -329,4 +329,4 @@ GeoDat AI systems follow several principles:
 
 # Guiding Principle
 
-The GeoDat AI platform should remain modular, scalable, and flexible while remaining simple enough to support both small consultancy projects and larger analytical systems.
+The Geodat AI platform should remain modular, scalable, and flexible while remaining simple enough to support both small consultancy projects and larger analytical systems.
