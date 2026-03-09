@@ -1,92 +1,99 @@
 # GeoDat AI Development Workflow
 
-This document defines the standard development workflow for repositories in the GeoDat AI GitHub organisation.
+This document defines the development workflow used across GeoDat AI repositories.
 
 ---
 
-## Branching Strategy
+# Branching Strategy
 
 The default branch is:
 
-- `main`
+main
 
-This branch should always represent stable, usable work.
+The main branch should always represent stable code.
 
-All new development should normally happen in short-lived branches.
+New work should occur in short-lived branches.
 
 Examples:
 
-- `feature/add-otp-endpoint`
-- `feature/create-postgis-schema`
-- `fix/shiny-login-bug`
-- `docs/update-readme`
+feature/add-routing-api  
+feature/create-postgis-schema  
+fix/api-timeout  
+docs/update-readme
 
 ---
 
-## Standard Workflow
+# Standard Workflow
 
-1. Create or update a branch from `main`.
-2. Make small, logical changes.
-3. Commit regularly with clear messages.
-4. Push changes to GitHub.
-5. Open a pull request for significant work.
-6. Review changes before merging to `main`.
+1. Create a branch from main
+2. Implement the change
+3. Commit frequently
+4. Push to GitHub
+5. Open a pull request
+6. Review changes
+7. Merge to main
 
 ---
 
-## Pull Requests
+# Pull Requests
 
 Pull requests should normally be used for:
 
-- infrastructure changes
-- schema changes
-- production API changes
-- important client deliverables
-- major refactoring
+infrastructure changes  
+database schema updates  
+API modifications  
+container configuration updates  
+client deliverables  
+major refactoring
 
-Even for solo work, pull requests are encouraged because they provide a change history and review point.
+Even for solo work, pull requests provide useful history.
 
 ---
 
-## Commit Message Style
+# Commit Messages
 
-Commit messages should be short and clear.
+Commit messages should be concise and descriptive.
 
 Examples:
 
-- `Add initial PostGIS schema`
-- `Create Docker Compose for Shiny service`
-- `Fix OTP request timeout handling`
-- `Update client project README`
+Add PostGIS schema for routing service  
+Create container build for Go API  
+Fix OTP request timeout handling  
+Update Shiny dashboard layout
 
-Avoid vague messages such as:
-
-- `stuff`
-- `changes`
-- `update files`
+Avoid vague messages.
 
 ---
 
-## Main Branch Rules
+# Container Development Workflow
 
-The `main` branch should be treated as protected for important repositories.
+Most GeoDat AI services run as containers.
 
-Direct commits to `main` are acceptable during early setup for low-risk documentation repos, but production, infrastructure, and critical client repositories should move towards pull-request-based changes.
+Typical workflow:
 
----
+1. Develop application code
+2. Build container using Dockerfile
+3. Test locally using Docker
+4. Push code to GitHub
+5. CI builds container image
+6. Deploy container to runtime platform
 
-## Repository Setup Expectations
-
-Each repository should normally include:
-
-- a clear `README.md`
-- a sensible folder structure
-- configuration examples where relevant
-- documentation for running or deploying the project
-- a `.gitignore` appropriate to the technology
+Containers must always be built from version-controlled code.
 
 ---
 
-## Guiding Principle
+# Repository Expectations
 
-Work should be easy to understand, easy to review, and easy to deploy.
+Each repository should normally contain:
+
+README.md  
+documentation  
+environment configuration examples  
+deployment instructions  
+container configuration if applicable
+
+---
+
+# Guiding Principle
+
+Code should be understandable, testable, and deployable.
