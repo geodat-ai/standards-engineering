@@ -1,4 +1,4 @@
-# GeoDat AI Container Standards
+# Geodat AI Container Standards
 
 This document defines the containerisation standards used across GeoDat AI services and applications.
 
