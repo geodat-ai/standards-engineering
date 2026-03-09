@@ -6,6 +6,20 @@ The documents in this repository act as the **engineering handbook** for the pla
 
 They describe how infrastructure, services, applications, and client projects should be organised and deployed.
 
+
+## Contents
+
+- [Engineering principles](engineering-principles.md)
+- [Development workflow](development-workflow.md)
+- [Container standards](container-standards.md)
+- [Platform architecture](platform-architecture.md)
+- [Infrastructure](infrastructure.md)
+- [Repository structure](repo-structure.md)
+- [AI services](ai-services.md)
+- [Security and secrets management](security-and-secrets.md)
+- [Client project structure](client-project-structure.md)
+
+
 ---
 
 # Platform Architecture
