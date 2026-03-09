@@ -2,130 +2,222 @@
 
 This document defines how repositories are organised within the GeoDat AI GitHub organisation.
 
-The aim is to maintain a clear separation between infrastructure, services, databases, analysis projects, and client work.
+Repositories represent deployable services, reusable platform components, analytical projects, or client engagements.
+
+The goal is to maintain a clear separation between infrastructure, services, applications, data systems, and client delivery work.
 
 ---
 
-## Repository Categories
+# Platform Architecture
 
-Repositories are organised by **function**, not by programming language.
+GeoDat AI follows a layered platform architecture.
 
-### Infrastructure
+Infrastructure Layer  
+Azure cloud resources defined using Infrastructure-as-Code.
 
-Repositories that define and manage cloud resources.
+Runtime Layer  
+Managed container runtime responsible for executing containerised services.
+
+Service Layer  
+Containerised APIs and processing services.
+
+Application Layer  
+User-facing applications and dashboards.
+
+Client Layer  
+Client-specific integrations and delivery work.
+
+---
+
+# Repository Categories
+
+Repositories are organised by **function**, not programming language.
+
+---
+
+## Infrastructure
+
+Repositories that define and manage cloud infrastructure.
 
 Examples:
 
-- infra-core
-- infra-runtime
+infra-core  
+infra-runtime
 
-Contents may include:
+Typical contents:
 
-- Terraform
-- Bicep
-- deployment scripts
-- Docker configuration
-- infrastructure documentation
+Terraform  
+Bicep  
+network definitions  
+database infrastructure  
+container environment configuration  
+deployment pipelines
+
+These repositories define what infrastructure exists and how it is deployed.
 
 ---
 
-### APIs and Services
+## APIs
 
-Repositories that contain deployable services.
+Reusable backend APIs shared across applications or client projects.
 
 Examples:
 
-- api-routing-go
-- service-data-ingestion
-- service-otp-runner
+api-routing-go  
+api-auth-go  
+api-reporting-python  
+api-geospatial-go
 
-These repos normally include:
+Typical contents:
 
-- service source code
-- configuration templates
-- deployment instructions
+service source code  
+Dockerfile  
+API documentation  
+container configuration  
+deployment instructions
+
+These services normally run as **containerised APIs**.
 
 ---
 
-### Databases
+## Services
+
+Background services and processing systems.
+
+Examples:
+
+service-otp-runner  
+service-data-ingestion  
+service-analysis-worker
+
+Typical responsibilities:
+
+data ingestion  
+batch processing  
+scheduled jobs  
+analytics pipelines
+
+Services are usually deployed as containers.
+
+---
+
+## Databases
 
 Repositories containing database schema and SQL assets.
 
 Examples:
 
-- db-postgres-core
-- db-postgis-tools
+db-postgres-core  
+db-postgis-tools
 
 Contents may include:
 
-- migrations
-- functions
-- views
-- indexes
-- database documentation
+schema definitions  
+migration scripts  
+views  
+functions  
+index configuration  
+database documentation
 
 ---
 
-### Analysis Projects
+## Shared Libraries
 
-Repositories containing analytical or modelling work.
+Reusable internal packages.
 
 Examples:
 
-- analysis-powys-bus-access
-- analysis-topic-modelling-gis
+pkg-geodatutils  
+pkg-go-spatial  
+pkg-python-geo
 
-These may include:
+These contain:
 
-- R projects
-- Python notebooks
-- SQL queries
-- data processing scripts
+utility functions  
+internal SDKs  
+shared modules
+
+These libraries are imported by other repositories.
 
 ---
 
-### Client Projects
+## Applications
 
-Repositories dedicated to specific client engagements.
+User-facing systems.
 
 Examples:
 
-- client-council-transport-review
-- client-nhs-accessibility-analysis
+app-accessibility-portal  
+app-admin-dashboard  
+app-journey-planner
 
-Access to these repositories should be restricted where required.
+Applications may include frontend frameworks such as:
+
+HTMX  
+SvelteKit  
+React  
+Vue  
+Shiny
+
+Applications normally interact with APIs and services rather than accessing databases directly.
 
 ---
 
-### Shared Libraries
+## Analysis Projects
 
-Reusable internal packages or libraries.
+Research or analytical work.
 
 Examples:
 
-- pkg-geodatutils
-- pkg-spatial-tools
+analysis-powys-bus-access  
+analysis-topic-modelling-gis
 
-These should contain reusable code used across multiple projects.
+These repositories may include:
+
+R scripts  
+Python notebooks  
+SQL analysis  
+data processing pipelines  
+reproducible research projects
 
 ---
 
-## Naming Conventions
+## Client Projects
 
-Repositories should follow predictable prefixes:
+Repositories dedicated to individual engagements.
+
+Examples:
+
+client-council-transport-review  
+client-nhs-accessibility-analysis
+
+These repositories contain:
+
+documentation  
+integration code  
+client-specific configuration  
+deliverables
+
+Client repositories should not contain reusable platform services.
+
+---
+
+# Naming Conventions
 
 | Prefix | Purpose |
 |------|------|
-| infra- | Infrastructure configuration |
-| api- | Backend APIs |
+| infra- | Infrastructure |
+| api- | APIs |
 | service- | Background services |
-| db- | Database schema and SQL |
-| analysis- | Research or analytical projects |
-| client- | Client-specific work |
+| db- | Database schema |
+| analysis- | Analytical projects |
+| client- | Client work |
 | pkg- | Shared libraries |
+| app- | Applications |
 
 ---
 
-## Guiding Principle
+# Guiding Principle
 
-Repositories should represent **deployable systems, reusable components, or clearly scoped projects**, rather than arbitrary collections of code.
+Repositories should represent deployable systems, reusable platform components, or clearly scoped projects.
+
