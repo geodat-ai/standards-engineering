@@ -195,3 +195,7 @@ This repository exists to ensure that Geodat AI systems remain:
 - maintainable
 - secure
 - scalable
+
+## Additional documentation
+
+- [Engineering principles](engineering-principles.md)
