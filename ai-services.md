@@ -1,4 +1,4 @@
-# GeoDat AI AI Services Architecture
+# Geodat AI Services Architecture
 
 GeoDat AI integrates artificial intelligence capabilities using Azure AI Services.
 
