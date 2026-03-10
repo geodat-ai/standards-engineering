@@ -42,7 +42,7 @@ geospatial analytics
 
 AI services should normally run as containerised APIs.
 
-Applications should interact with AI services through APIs rather than embedding AI logic directly.
+Applications should interact with AI services through APIs rather than embedding AI logic directly within application code.
 
 ---
 
