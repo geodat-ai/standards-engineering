@@ -31,7 +31,7 @@ The goal is to ensure Geodat AI systems remain:
 | [Client project structure](client-project-structure.md) | Structure of client repositories |
 
 
-
+---
 
 
 # Platform Architecture
