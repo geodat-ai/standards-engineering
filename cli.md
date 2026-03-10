@@ -41,6 +41,23 @@ The CLI should:
 
 ---
 
+## Implementation: Go and Cobra
+
+The Geodat CLI is implemented in **Go** using the **Cobra** CLI framework.
+
+Go is well suited for platform tooling because it produces a **single compiled binary**, is fast, portable, and widely used for infrastructure and developer tools. Cobra provides a structured way to build command-line applications with **nested commands, flags, help output, and consistent command patterns**.
+
+Using Go and Cobra allows the CLI to support commands such as:
+
+- `geodat analysis run`
+- `geodat data ingest`
+- `geodat services deploy`
+
+Cobra handles command parsing, argument validation, help generation, and command hierarchy, allowing the CLI code to remain small while delegating real work to platform APIs or internal services.
+
+In practice, CLI commands act as **thin wrappers** that translate user commands into calls to platform APIs or service functions, keeping the CLI lightweight and maintainable while ensuring it remains aligned with the platform architecture.
+
+
 # Guiding Principle
 
 The CLI should simplify access to platform capabilities without becoming a tightly coupled monolithic tool.
