@@ -2,43 +2,53 @@
 
 This repository defines the engineering standards, architecture principles, and development practices used across Geodat AI systems.
 
-The documents in this repository act as the **engineering handbook** for the platform.
+The documents in this repository act as the **engineering handbook** for the Geodat AI platform.
 
-They describe how infrastructure, services, applications, and client projects should be organised and deployed.
+They describe how infrastructure, services, applications, analytical workflows, and client projects should be organised and deployed.
 
+The goal is to ensure Geodat AI systems remain:
 
-## Contents
+- consistent  
+- maintainable  
+- secure  
+- scalable  
 
-- [Engineering principles](engineering-principles.md)
-- [Development workflow](development-workflow.md)
-- [Container standards](container-standards.md)
-- [Platform architecture](platform-architecture.md)
-- [Infrastructure](infrastructure.md)
-- [Repository structure](repo-structure.md)
-- [AI services](ai-services.md)
-- [Security and secrets management](security-and-secrets.md)
-- [Client project structure](client-project-structure.md)
+---
 
+# Contents
+
+- Engineering principles
+- Development workflow
+- Container standards
+- Platform architecture
+- Infrastructure
+- Repository structure
+- AI services
+- Security and secrets management
+- Client project structure
 
 ---
 
 # Platform Architecture
 
-The GeoDat AI platform follows a layered architecture designed for containerised services, geospatial analytics, and cloud-native deployment.
+Geodat AI follows a layered architecture designed for:
+
+- containerised services
+- geospatial analytics
+- scalable cloud deployment
+
+The architecture combines:
+
+- Azure infrastructure
+- containerised APIs and services
+- spatial databases
+- analytical pipelines
+- AI capabilities
+- web applications and dashboards
 
 See:
 
-platform-architecture.md
-
-This document describes the full system architecture including:
-
-- Azure infrastructure
-- container runtime
-- APIs and services
-- AI services
-- geospatial systems
-- frontend applications
-- client delivery projects
+`platform-architecture.md`
 
 ---
 
@@ -46,28 +56,30 @@ This document describes the full system architecture including:
 
 The following documents define how the platform is built and maintained.
 
-## Repository Structure
+## Engineering principles
 
-repo-structure.md
+`engineering-principles.md`
 
-Defines how repositories are organised across the GitHub organisation.
+Defines the core engineering principles guiding Geodat AI system design.
 
-Covers:
+Includes:
 
-- infrastructure repositories
-- APIs and services
-- applications
-- shared libraries
-- analysis projects
-- client repositories
+- reproducible analytics
+- cloud-native architecture
+- open geospatial standards
+- spatial data integrity
+- scalable spatial processing
+- secure infrastructure
 
 ---
 
-## Development Workflow
+## Development workflow
 
-development-workflow.md
+`development-workflow.md`
 
-Defines the development workflow including:
+Defines the development workflow used across Geodat AI repositories.
+
+Includes:
 
 - branching strategy
 - pull request workflow
@@ -76,24 +88,9 @@ Defines the development workflow including:
 
 ---
 
-## Infrastructure Architecture
+## Container standards
 
-infrastructure.md
-
-Defines how infrastructure is managed using Infrastructure-as-Code.
-
-Covers:
-
-- Azure infrastructure
-- container runtime
-- Terraform and Bicep
-- runtime configuration
-
----
-
-## Container Standards
-
-container-standards.md
+`container-standards.md`
 
 Defines how containerised services should be built and deployed.
 
@@ -107,41 +104,74 @@ Includes:
 
 ---
 
-## Security and Secrets
+## Infrastructure architecture
 
-security-and-secrets.md
+`infrastructure.md`
 
-Defines security standards.
+Defines how cloud infrastructure is managed using Infrastructure-as-Code.
 
-Covers:
+Includes:
+
+- Azure infrastructure resources
+- Terraform and Bicep configuration
+- runtime container environments
+- infrastructure deployment practices
+
+---
+
+## Repository structure
+
+`repo-structure.md`
+
+Defines how repositories are organised across the Geodat AI GitHub organisation.
+
+Includes:
+
+- infrastructure repositories
+- APIs and services
+- applications
+- shared libraries
+- analytical projects
+- client repositories
+
+---
+
+## AI services
+
+`ai-services.md`
+
+Defines how AI capabilities are integrated into the Geodat AI platform.
+
+Includes:
+
+- Azure AI Services
+- Azure OpenAI
+- AI agents
+- document analysis
+- AI service APIs
+
+---
+
+## Security and secrets
+
+`security-and-secrets.md`
+
+Defines security standards and credential management.
+
+Includes:
 
 - Azure Key Vault
 - secret management
-- environment configuration
+- runtime configuration
 - incident response
 
 ---
 
-## AI Services
+## Client project structure
 
-ai-services.md
+`client-project-structure.md`
 
-Defines how AI capabilities are integrated into the platform.
-
-Covers:
-
-- Azure AI Services
-- AI agents
-- AI service APIs
-- integration patterns
-
----
-
-## Client Project Structure
-
-client-project-structure.md
-
-Defines how client repositories should be organised.
+Defines how repositories for client engagements should be organised.
 
 Includes:
 
@@ -155,26 +185,30 @@ Includes:
 
 # Platform Technologies
 
-Typical technologies used across GeoDat AI systems include:
+Typical technologies used across Geodat AI systems include:
 
-Backend services:
+### Backend services
+
 - Go
 - Python
 - R
 
-Frontend applications:
+### Frontend applications
+
 - HTMX
 - SvelteKit
 - React
 - Vue
 - Shiny
 
-Geospatial systems:
+### Geospatial systems
+
 - PostGIS
 - GeoServer
 - OpenTripPlanner
 
-Cloud infrastructure:
+### Cloud infrastructure
+
 - Microsoft Azure
 - Azure Container Apps
 - Azure Container Registry
@@ -182,15 +216,16 @@ Cloud infrastructure:
 - Azure Blob Storage
 - Azure Key Vault
 
-AI capabilities:
+### AI capabilities
+
 - Azure AI Services
 - Azure OpenAI
 
 ---
 
-# Guiding Principles
+# Design Principles
 
-GeoDat AI systems follow several core principles:
+Geodat AI systems follow several core principles:
 
 - use containerised services
 - separate infrastructure from application code
@@ -203,13 +238,11 @@ GeoDat AI systems follow several core principles:
 
 # Purpose
 
-This repository exists to ensure that Geodat AI systems remain:
+This repository exists to ensure Geodat AI systems remain:
 
 - consistent
 - maintainable
 - secure
 - scalable
 
-## Additional documentation
-
-- [Engineering principles](engineering-principles.md)
+It serves as the engineering handbook for the Geodat AI platform.
