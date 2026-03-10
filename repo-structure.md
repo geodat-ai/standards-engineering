@@ -101,6 +101,24 @@ Services are usually deployed as containers.
 
 ---
 
+## Interface and access patterns
+
+Repositories should also be clear about how a system is accessed.
+
+Common patterns include:
+
+- API services: accessed over HTTP by applications or other services.
+- UI applications: accessed by end users through a browser-based interface.
+- CLI tools: accessed through command-line commands by developers or operators.
+- Worker services: run in the background and are not directly accessed by end users.
+- Shared libraries: imported by other repositories and not deployed directly.
+
+A repository should have one primary access pattern. Mixed-purpose repositories should be avoided unless there is a strong reason for combining them.
+
+
+---
+
+
 ## Databases
 
 Repositories containing database schema and SQL assets.
