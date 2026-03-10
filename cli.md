@@ -57,6 +57,7 @@ Cobra handles command parsing, argument validation, help generation, and command
 
 In practice, CLI commands act as **thin wrappers** that translate user commands into calls to platform APIs or service functions, keeping the CLI lightweight and maintainable while ensuring it remains aligned with the platform architecture.
 
+---
 
 # Guiding Principle
 
