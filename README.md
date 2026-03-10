@@ -29,6 +29,25 @@ The goal is to ensure Geodat AI systems remain:
 
 ---
 
+
+## Documentation
+
+| Document | Description |
+|--------|--------|
+| [Engineering principles](engineering-principles.md) | Core engineering principles |
+| [Development workflow](development-workflow.md) | Branching, commits, pull requests |
+| [Container standards](container-standards.md) | Docker and container practices |
+| [Platform architecture](platform-architecture.md) | Overall system architecture |
+| [Infrastructure](infrastructure.md) | Infrastructure-as-code and Azure setup |
+| [Repository structure](repo-structure.md) | Organisation of repositories |
+| [AI services](ai-services.md) | AI integration architecture |
+| [Security and secrets management](security-and-secrets.md) | Key Vault and secret handling |
+| [Client project structure](client-project-structure.md) | Structure of client repositories |
+
+
+
+
+
 # Platform Architecture
 
 Geodat AI follows a layered architecture designed for:
