@@ -94,6 +94,16 @@ container configuration if applicable
 
 ---
 
+Each repository should document:
+
+- its purpose
+- its primary access pattern
+- how it is run locally
+- how it is deployed
+- any authentication or configuration requirements
+
+---
+
 # Guiding Principle
 
 Code should be understandable, testable, and deployable.
