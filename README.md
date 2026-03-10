@@ -15,20 +15,6 @@ The goal is to ensure Geodat AI systems remain:
 
 ---
 
-# Contents
-
-- [Engineering principles](engineering-principles.md)
-- [Development workflow](development-workflow.md)
-- [Container standards](container-standards.md)
-- [Platform architecture](platform-architecture.md)
-- [Infrastructure](infrastructure.md)
-- [Repository structure](repo-structure.md)
-- [AI services](ai-services.md)
-- [Security and secrets management](security-and-secrets.md)
-- [Client project structure](client-project-structure.md)
-
----
-
 
 ## Documentation
 
