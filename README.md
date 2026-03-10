@@ -29,6 +29,7 @@ The goal is to ensure Geodat AI systems remain:
 | [AI services](ai-services.md) | AI integration architecture |
 | [Security and secrets management](security-and-secrets.md) | Key Vault and secret handling |
 | [Client project structure](client-project-structure.md) | Structure of client repositories |
+| [CLI tools](cli.md) | Command-line tools used by developers and operators to interact with platform services |
 
 
 ---
