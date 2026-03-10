@@ -327,6 +327,16 @@ GeoDat AI systems follow several principles:
 
 ---
 
+Geodat AI systems may expose functionality through different interface types:
+
+- APIs for machine-to-machine communication.
+- Web applications and dashboards for end users.
+- CLI tools for developer and operator workflows.
+- Background workers for scheduled or event-driven processing.
+
+These access patterns should be explicit in repository documentation and deployment design.
+
+
 # Guiding Principle
 
 The Geodat AI platform should remain modular, scalable, and flexible while remaining simple enough to support both small consultancy projects and larger analytical systems.
