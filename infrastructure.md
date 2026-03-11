@@ -2,7 +2,7 @@
 
 Infrastructure is defined using Infrastructure-as-Code.
 
-The authoritative IaC language for GeoDat AI is **Bicep** (Azure-native).
+The authoritative IaC language for GeoDdt AI is **Bicep** (Azure-native).
 
 Infrastructure should be reproducible, version controlled, and auditable.
 
