@@ -192,6 +192,48 @@ Modules should be deployed in dependency order:
 
 ---
 
+
+# Project Deployment Architecture
+
+## Hybrid Landing Zone Pattern
+
+Geodat AI uses a hybrid approach that balances shared platform efficiency 
+with project portability.
+
+## Platform-Managed Resources (Central)
+
+Managed in `platform-infrastructure` repo. Shared across all projects:
+
+- Shared networking and VNets
+- Azure Container Registry (ACR)
+- Log Analytics Workspace
+- DNS zones
+
+## Project-Managed Resources (Self-Contained)
+
+Managed within each project repo. Deployed per project:
+
+- Container Apps Environment
+- Container Apps (API, OTP, database etc.)
+- Project-specific secrets
+- Project-specific database
+
+## Portability
+
+Projects accept shared resources as Bicep parameters:
+```bicep
+param containerRegistryName string
+param logAnalyticsWorkspaceId string
+```
+
+This means a project can consume Geodat shared platform resources, or a 
+client can supply their own equivalents. The project Bicep is 
+infrastructure-agnostic.
+
+
+
+
+
 # Runtime Layer
 
 The runtime layer runs containerised services.
